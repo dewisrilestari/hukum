@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"> 
+        <link rel="stylesheet" href="https://cedeen.netlify.app/font-awesome-5-pro/css/all.min.css" />
+        <!-- <link rel="stylesheet" href="css/index.css"> -->
+        <title>JDIH KUDUS</title>
+        <style type="text/css">
+
+            nav{ 
+                background-image: linear-gradient(to right, #4682B4, #00FFFF, #00FA9A);
+                    list-style-type: none;
+
+               }
+            .footer{
+ 
+            background-color: orange;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            overflow: hidden;
+            position:fixed;
+            background-image: linear-gradient(to right, #4682B4, #00FFFF, #00FA9A);
+            }
+            #idsection{
+                padding: 2%;
+            }
+            .block {
+              /*background-color: red;*/
+              border: 10px solid white;
+              min-height: 50px;
+              color: white;
+              margin-bottom: 10%;
+            }
+            #idhome{
+                display: none;
+            }
+            #idberita{
+                display: none;
+            }
+            #idproduk{
+                display: none;
+            }
+            #idkudus{
+                display: none;
+            }
+            #idlogout{
+                display: block;
+            }
+            body{
+               
+            }
+        </style>
+    </head>
+    <body >
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+            <a class="navbar-brand" href="#">JDIH KUDUS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" id="lidhome" style="text-decoration:none;cursor: pointer;">Home<!-- <span class="sr-only"> --><!-- (current) --><!-- </span> --></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="lidinfo" style="text-decoration:none;cursor: pointer;">Berita</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="lidpanduan"  style="text-decoration:none; cursor: pointer;">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="lidkudus" style="text-decoration:none;cursor: pointer;">Kudus</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="lidlogout" style="text-decoration:none;cursor: pointer;">Logout</a>
+                    </li>
+                 <!--    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                    </li> -->
+                    <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"><!-- Disabled --></a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+                    <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> --><!-- Search --><!-- </button> -->
+                </form>
+            </div>
+        </nav>
+        <div id="idhome"></div>
+        <div id="idberita"></div>
+        <div id="idproduk"></div>
+        <div id="idkudus">
+            <div class='container' >
+            <div class='row'>
+            <div class='col-sm-12 block' style='background-color:#E6E6FA; color: black; '>
+            <p style="text-align: justify;">Kudus awalnya kota di tepi Sungai Gelis,dan salah satu kota di Pulau Muria. Dahulu Kota Kudus bernama Kota Tajug, disebut Tajug karena di daerah tersebut terdapat banyak Tajug, Tajug merupakan bentuk atap arsitektur tradisional yang sangat kuno dipakai tujuan keramat. Tajug dahulunya di jadikan tempat bersembahyang warga Hindu di daerah tersebut. Dengan demikian kota Tajug dulunya sudah memiliki sifat kekeramatan tertentu. Sunan Kudus mendekati warga kota Tajug dengan membuat struktur atas Menara Kudus yang berbentuk Tajug. Warga hidup dari bertani, membuat batu bata, menangkap ikan, dan berdagang. Setelah kedatangan Sunan Kudus, Kota itu dikenal sebagai "Al-Quds" yang berarti "Kudus". Kota Tajug memang sudah lama menjadi kota perdagangan, tetapi karena posisinya agak jauh dari Selat Muria, tidak ada pelabuhan besar di Kota Tajug, hanya pelabuhan transit, yang nanti akan transit lagi ke Pelabuhan Tanjung Karang di tepi Selat Muria. Pada saat itu, Selat Muria masih dalam dan lebar, sebagai jalan pintas perdagangan. Pelabuhan Tanjung Karang adalah pelabuhan transit penghubung ke pelabuhan Demak, Jepara dan Juwana. Komoditas utama ekspor Pelabuhan Tanjung Karang adalah kayu yang berasal dari muria, yang juga digunakan sebagai salah satu material pembangunan Masjid Agung Demak.</p>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div id="idlogout"></div>
+
+
+        <!-- <div class="container">
+          <div class="row">
+            <div class="col-sm-6 block" style="background-color: red">
+              content
+            </div>
+            <div class="col-sm-6 block" style="background-color: green">
+              content
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-9" style="background-color: red">
+              <div class="row">
+                <div class="col-sm-12 block">
+                  content
+                </div>
+                <div class="col-sm-6 block">
+                  content
+                </div>
+                <div class="col-sm-6 block">
+                  content
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3 block" style="background-color: green">
+              content
+            </div>
+          </div>
+        </div> -->
+        <!-- <div id="tampildata"></div> -->
+        <div class="footer">
+            <style>
+                ul#menu li {
+                  display:inline;
+                }
+                </style>
+                
+                <ul id="menu">
+                    <li>
+                        <a id="gidhome" style="text-decoration:none;cursor: pointer;">
+                        <img src="home.png" style="width: 7%; margin-top: 3%;">
+                        </a>
+                    </li>
+                    <li>
+                        <a id="gidinfo" style="text-decoration:none;cursor: pointer;">
+                        <img src="informasiterbaru.png" style="width: 7%; margin-left: 10%;margin-top: 3%;">
+                        </a>
+                    </li>
+                    <li>
+                        <a id="gidpanduan"  style="text-decoration:none; cursor: pointer;">
+                        <img src="panduan.png" style="width: 7%; margin-left: 14%;margin-top: 3%;">
+                        </a>
+                    </li>
+                    <li>
+                        <a id="gidkudus" style="text-decoration:none;cursor: pointer;">
+                        <img src="kudus.png" style="width: 7%; margin-left: 14%;margin-top: 3%;">
+                        </a>
+                    </li>
+                    <li>
+                        <a id="gidlogout" style="text-decoration:none;cursor: pointer;">
+                        <img src="logout.png" style="width: 7%; margin-left: 14%;margin-top: 3%;">
+                        </a>
+                    </li>
+                </ul>
+        </div>
+        <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
+
+<!-- ajax -->
+<script type="text/javascript">
+        $.ajax({
+            type: "POST",
+            url: "http://adsl479.com/jdih/www/home.php",
+                success: function(data){
+                $('#idlogout').html(data);
+                
+                }
+            });
+        $('#gidhome').on('click', function(){
+            $('#idlogout').css('display','block');
+            $('#idproduk').css('display','none');
+            $('#idkudus').css('display','none');
+        })
+        $('#gidinfo').on('click', function(){
+            $('#idlogout').css('display','block');
+            $('#idproduk').css('display','none');
+            $('#idkudus').css('display','none');
+         })
+        $('#gidpanduan').on('click', function(){
+            $('#idlogout').css('display','none');
+            $('#idproduk').css('display','block');
+            $.ajax({
+                type: "POST",
+                url: "http://adsl479.com/jdih/www/produk.php",
+                    success: function(data){
+                    $('#idproduk').html(data);
+                    
+                    }
+                });
+         })
+        $('#gidkudus').on('click', function(){
+            $('#idlogout').css('display','none');
+            $('#idproduk').css('display','none');
+            $('#idkudus').css('display','block');
+         })
+        $('#gidlogout').on('click', function(){
+            $('#idlogout').css('display','block');
+            $('#idproduk').css('display','none');
+            $('#idkudus').css('display','none');
+         })
+</script>
+
+
+
+<script type="text/javascript">
+        $('#lidhome').on('click', function(){
+            $('#idlogout').css('display','block');
+            $('#idproduk').css('display','none');
+            $('#idkudus').css('display','none');
+        })
+        $('#lidinfo').on('click', function(){
+            $('#idlogout').css('display','block');
+            $('#idproduk').css('display','none');
+            $('#idkudus').css('display','none');
+         })
+        $('#lidpanduan').on('click', function(){
+            $('#idlogout').css('display','none');
+            $('#idproduk').css('display','block');
+            $.ajax({
+                type: "POST",
+                url: "produk.php",
+                    success: function(data){
+                    $('#idproduk').html(data);
+                    
+                    }
+                });
+         })
+        $('#lidkudus').on('click', function(){
+            $('#idlogout').css('display','none');
+            $('#idproduk').css('display','none');
+            $('#idkudus').css('display','block');
+         })
+        $('#lidlogout').on('click', function(){
+            $('#idlogout').css('display','block');
+            $('#idproduk').css('display','none');
+            $('#idkudus').css('display','none');
+         })
+</script>
